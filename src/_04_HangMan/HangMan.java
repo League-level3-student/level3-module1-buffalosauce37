@@ -24,13 +24,17 @@ public class HangMan{
 	panel.add(label1);
 	panel.add(label2);
 	panel.add(label3);
+	frame.setVisible(true);
+	frame.pack();
 	}
 	static Stack<String> s = new Stack<>();
 	public static void main(String[] args) {
+		HangMan hang = new HangMan();
+		hang.Setup();
 	String x =	JOptionPane.showInputDialog("how many words would you like to have");
 		int y = Integer.parseInt(x);
 		for (int i = 0; i < y; i++) {
-			String word = Utilities.readRandomLineFromFile("dictionary.txt");
+			String word = Utilities.readRandomLineFromFile("src/_04_HangMan/dictionary.txt");
 			if (!s.contains(word)) {
 				s.push(word);
 			}
